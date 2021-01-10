@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+    <div>DB_Users</div>
+    <div class="container-xl" style="max-width: 100%;">
+        <div class="table-responsive-xl">
+            <div class="table-wrapper">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Name</td>
+                            <td>Surname</td>
+                            <td>Login</td>
+                            <td>Password</td>
+                            <td>Email</td>
+                        </tr>
+                    </thead>
+                    @foreach (var i in ViewBag.DB_Users)
+                    {
+                        <tbody>
+                            <td>@i.UserID</td>
+                            <td>@i.Name</td>
+                            <td>@i.Surname</td>
+                            <td>@i.Login</td>
+                            <td>@i.Password</td>
+                            <td>@i.Email</td>
+                        </tbody>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+    <div>@Html.ActionLink("Add User", "AddUser")</div>
+    <hr />
+
+    <div>DB_Roles</div>
+    <div class="container-xl" style="max-width: 100%;">
+        <div class="table-responsive-xl">
+            <div class="table-wrapper">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <td>Role ID</td>
+                            <td>AdminRights</td>
+                            <td>UserRights</td>
+                            <td>SellerRights</td>
+                            <td>AssistantRights</td>
+                        </tr>
+                    </thead>
+                    @foreach (var i in ViewBag.DB_Roles)
+                    {
+                        <tbody>
+                            <td>@i.RoleID</td>
+                            <td>@i.AdminRights</td>
+                            <td>@i.UserRights</td>
+                            <td>@i.SellerRights</td>
+                            <td>@i.AssistantRights</td>
+                        </tbody>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+    <hr />
+
+    <div>DB_Intermediates</div>
+    <div class="container-xl" style="max-width: 100%;">
+        <div class="table-responsive-xl">
+            <div class="table-wrapper">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>UserID</td>
+                            <td>RoleID</td>
+                        </tr>
+                    </thead>
+                    @foreach (var i in ViewBag.DB_Intermediate)
+                    {
+                        <tbody>
+                            <td>@i.ID</td>
+                            <td>@i.UsersID</td>
+                            <td>@i.RolesID</td>
+                        </tbody>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
